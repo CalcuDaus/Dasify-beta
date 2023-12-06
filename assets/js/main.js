@@ -103,6 +103,8 @@ function cekLebarWindow() {
 
 // Panggil fungsi saat window diubah ukurannya
 window.addEventListener("resize", cekLebarWindow);
-
+window.addEventListener("load", () => {
+  cekLebarWindow();
+});
 // Panggil fungsi sekali pada awal untuk inisialisasi
 cekLebarWindow();
