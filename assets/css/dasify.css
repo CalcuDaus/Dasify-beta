@@ -73,16 +73,17 @@ ul {
     transition: all .3s;
 }
 
+.dropdown-sidebar>ul {
+    padding-left: 20px !important;
+}
+
 .dropdown-sidebar>ul>li>a:hover {
     margin-left: 13px;
 }
 
-.dropdown-sidebar>ul>li>a::before {
-    content: "⚪  ";
-    font-size: 8px;
+.fa-crosshairs {
+    font-size: 12px;
 }
-
-
 
 .nav-btn a {
     text-decoration: none;

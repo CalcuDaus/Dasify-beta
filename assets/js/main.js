@@ -58,7 +58,7 @@ dropNavs.forEach((dropNav, index) => {
     dropNav.classList.toggle("d-side-active");
     if (dropNav.classList.contains("d-side-active")) {
       dropNav.style.height =
-        dropSides[index].offsetHeight + dropNav.offsetHeight + 20 + "px";
+        dropSides[index].offsetHeight + dropNav.offsetHeight + 10 + "px";
     } else {
       dropNav.style.height = "47.99px";
     }
