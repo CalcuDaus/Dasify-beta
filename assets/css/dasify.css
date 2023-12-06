@@ -446,3 +446,33 @@ canvas {
 .container-profile.notif-light {
     color: var(--white);
 }
+
+@media screen and (max-width:425px) {
+    .content::before {
+        background-size: contain;
+        width: 150px;
+        top: 50px;
+        right: 50px;
+    }
+
+    .title-container::after {
+        background-size: contain;
+        width: 150px;
+        top: 300px;
+        left: 60px;
+    }
+
+    .company-name {
+        display: none;
+    }
+
+    .search-field.s-active {
+        width: 90px;
+        padding: 3px 4px;
+    }
+
+    .container-notif {
+        left: -160px;
+
+    }
+}
