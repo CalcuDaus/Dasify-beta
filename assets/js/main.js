@@ -1,7 +1,6 @@
-// Storage KEY
 const DASIFY_KEY = "DASIFY_KEY";
 
-// Element
+// Elements
 const hr = document.getElementById("hr");
 const setting = document.querySelector(".setting");
 const lessThans = document.querySelectorAll(".less-than");
@@ -18,94 +17,119 @@ const search = document.querySelector(".search-img");
 const searchField = document.querySelector(".search-field");
 const btnTheme = document.querySelector(".button-theme");
 const imgIcons = document.querySelectorAll(".icon-img");
-const navBtn = document.querySelectorAll(".nav-btn");
-
-function lightTheme() {
+const navBtns = document.querySelectorAll(".nav-btn");
+const aNavs = document.querySelectorAll(".nav-btn a");
+const btnShort = document.querySelector(".btn-shorten");
+// theme
+function toggleLightTheme() {
   main.classList.toggle("light-theme");
-  imgIcons.forEach((e) => {
-    e.classList.toggle("light-img");
-  });
+  imgIcons.forEach((icon) => icon.classList.toggle("light-img"));
   searchField.classList.toggle("s-theme");
   hr.classList.toggle("hr-theme");
   containerNotif.classList.toggle("notif-light");
   containerprofile.classList.toggle("notif-light");
 }
+
 btnTheme.addEventListener("click", function () {
-  let data = {
-    isDark: true,
+  const data = {
+    isDark: !main.classList.contains("light-theme"),
   };
-  if (main.classList.contains("light-theme")) {
-    data.isDark = false;
-  }
   localStorage.setItem(DASIFY_KEY, JSON.stringify(data));
-  lightTheme();
+  toggleLightTheme();
 });
 
 function checkTheme() {
-  if (localStorage.getItem(DASIFY_KEY) != null) {
-    let dataFromStorage = JSON.parse(localStorage.getItem(DASIFY_KEY));
-    if (dataFromStorage.isDark == true) {
-      lightTheme();
-    }
+  const dataFromStorage = JSON.parse(localStorage.getItem(DASIFY_KEY));
+  if (dataFromStorage && dataFromStorage.isDark) {
+    toggleLightTheme();
   }
 }
 checkTheme();
 
+// sidebar
 dropNavs.forEach((dropNav, index) => {
-  dropNav.addEventListener("click", function () {
-    // setting.classList.toggle("col-active");
-    lessThans[index].classList.toggle("i-active");
-    dropNav.classList.toggle("d-side-active");
-    if (dropNav.classList.contains("d-side-active")) {
-      dropNav.style.height =
-        dropSides[index].offsetHeight + dropNav.offsetHeight + 10 + "px";
-    } else {
-      dropNav.style.height = "47.99px";
-    }
-    // dropSide.classList.toggle("d-active");
-  });
+  const isActive = dropNav.classList.contains("nav-btn-active");
+  if (isActive) {
+    activateDropNav(dropNav, index);
+  } else {
+    dropNav.style.height = "47.99px";
+  }
 });
 
-hamburgerIcon.addEventListener("click", function () {
+function dropNav() {
+  dropNavs.forEach((dropNav, index) => {
+    dropNav.addEventListener("click", () => activateDropNav(dropNav, index));
+  });
+}
+
+function activateDropNav(dropNav, index) {
+  lessThans[index].classList.toggle("i-active");
+  dropNav.classList.toggle("d-side-active");
+  const height = dropNav.classList.contains("d-side-active")
+    ? dropSides[index].offsetHeight + dropNav.offsetHeight + 10 + "px"
+    : "47.99px";
+  dropNav.style.height = height;
+}
+
+dropNav();
+
+hamburgerIcon.addEventListener("click", () => {
   sidebar.classList.toggle("sidebar-active");
   main.classList.toggle("main-active");
 });
 
-notif.addEventListener("click", function () {
-  containerNotif.classList.toggle("n-active");
-});
-profile.addEventListener("click", function () {
-  containerprofile.classList.toggle("n-active");
-});
-search.addEventListener("click", function () {
-  searchField.classList.toggle("s-active");
+dropNavs.forEach((dropNav) => {
+  dropNav.addEventListener("click", () => {
+    if (sidebar.classList.contains("shorten-active")) {
+      shortSide();
+    }
+  });
 });
 
-// Mendeteksi lebar maksimum window
-var maxWidth = 670; // Gantilah dengan nilai lebar maksimum yang Anda inginkan
+btnShort.addEventListener("click", function () {
+  shortSide();
+});
+function shortSide() {
+  sidebar.classList.toggle("shorten-active");
+  main.classList.toggle("main-short-active");
+  if (sidebar.classList.contains("shorten-active")) {
+    aNavs.forEach((e) => (e.style.display = "none"));
+    dropNavs.forEach((e) => (e.style.height = "44px"));
+    lessThans.forEach((e) => (e.style.display = "none"));
+    document.querySelector(".logo p").style.display = "none";
+    btnShort.style.marginLeft = "0px";
+  } else {
+    document.querySelector(".logo p").style.display = "block";
+    aNavs.forEach((e) => (e.style.display = "inline"));
+    lessThans.forEach((e) => (e.style.display = "inline"));
+    btnShort.style.marginLeft = "65px";
+  }
+}
 
-function cekLebarWindow() {
-  // Mendapatkan lebar window saat ini
-  var lebarWindow =
+// header
+notif.addEventListener("click", () =>
+  containerNotif.classList.toggle("n-active")
+);
+profile.addEventListener("click", () =>
+  containerprofile.classList.toggle("n-active")
+);
+search.addEventListener("click", () =>
+  searchField.classList.toggle("s-active")
+);
+
+// window
+const maxWidth = 670;
+
+function checkWindowWidth() {
+  const windowWidth =
     window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
-
-  // Memeriksa apakah lebar window melebihi maksimum
-  if (lebarWindow <= maxWidth) {
-    sidebar.classList.add("sidebar-active");
-    main.classList.add("main-active");
-  } else {
-    sidebar.classList.remove("sidebar-active");
-    main.classList.remove("main-active");
-  }
+  const isMobile = windowWidth <= maxWidth;
+  sidebar.classList.toggle("sidebar-active", isMobile);
+  main.classList.toggle("main-active", isMobile);
 }
-document.addEventListener("DOMContentLoaded", function () {
-  cekLebarWindow();
-});
 
-// Panggil fungsi saat window diubah ukurannya
-window.addEventListener("resize", cekLebarWindow);
-
-// Panggil fungsi sekali pada awal untuk inisialisasi
-cekLebarWindow();
+document.addEventListener("DOMContentLoaded", checkWindowWidth);
+window.addEventListener("resize", checkWindowWidth);
+checkWindowWidth();
