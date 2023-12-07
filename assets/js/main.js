@@ -98,11 +98,13 @@ function shortSide() {
     lessThans.forEach((e) => (e.style.display = "none"));
     document.querySelector(".logo p").style.display = "none";
     btnShort.style.marginLeft = "0px";
+    document.querySelector(".fa-arrow-left").style.transform = "rotate(180deg)";
   } else {
     document.querySelector(".logo p").style.display = "block";
     aNavs.forEach((e) => (e.style.display = "inline"));
     lessThans.forEach((e) => (e.style.display = "inline"));
     btnShort.style.marginLeft = "65px";
+    document.querySelector(".fa-arrow-left").style.transform = "rotate(0deg)";
   }
 }
 
