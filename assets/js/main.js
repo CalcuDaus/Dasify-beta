@@ -135,3 +135,15 @@ function checkWindowWidth() {
 document.addEventListener("DOMContentLoaded", checkWindowWidth);
 window.addEventListener("resize", checkWindowWidth);
 checkWindowWidth();
+
+const loader = document.querySelector(".wrapper-loader");
+// loading
+function hideLoading() {
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+  loader.style.opacity = 0;
+}
+window.addEventListener("load", function () {
+  this.setTimeout(hideLoading, 1000);
+});

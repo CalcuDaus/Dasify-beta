@@ -24,7 +24,7 @@
       <nav class="mt-5">
         <ul class="menu-sidebar">
           <!-- S: Dashboard -->
-          <li class="nav-btn">
+          <li class="nav-btn nav-btn-active">
             <img src="assets/img/icons-home.png" width="22px" alt="" />
             <a href="index.html">Dashboard</a>
           </li>
@@ -41,19 +41,28 @@
             <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
               <ul>
                 <li class="mt-2">
-                  <a href="" class="d-flex align-items-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="d-flex align-items-center"
+                  >
                     <i class="fa-solid fa-crosshairs pe-2"></i>
                     <span>Overall</span>
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="" class="d-flex align-items-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="d-flex align-items-center"
+                  >
                     <i class="fa-solid fa-crosshairs pe-2"></i>
                     <span>Sale Report</span>
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="" class="d-flex align-items-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="d-flex align-items-center"
+                  >
                     <i class="fa-solid fa-crosshairs pe-2"></i>
                     <span>Report</span>
                   </a>
@@ -64,7 +73,7 @@
           <!-- E: Report -->
           <!-- S: Layout -->
           <li
-            class="nav-btn drop-nav nav-btn-active c-pointer d-flex flex-column justify-content-start align-items-start"
+            class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start"
           >
             <div class="">
               <img src="assets/img/icons-grid.png" width="22px" alt="" />
@@ -74,13 +83,16 @@
             <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
               <ul>
                 <li class="mt-2">
-                  <a href="" class="d-flex align-items-center">
+                  <a href="form-layout.html" class="d-flex align-items-center">
                     <i class="fa-solid fa-crosshairs pe-2"></i>
                     <span>Form Layout</span>
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="" class="d-flex align-items-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="d-flex align-items-center"
+                  >
                     <i class="fa-solid fa-crosshairs pe-2"></i>
                     <span>Grid Layout</span>
                   </a>
@@ -92,9 +104,12 @@
           <!-- S: Setting -->
           <li class="nav-btn setting">
             <img src="assets/img/icons-setting.png" width="22px" alt="" />
-            <a href="">Setting</a>
+            <a href="javascript:void(0);">Setting</a>
           </li>
           <!-- E: Setting -->
+          <li class="nav-btn c-pointer btn-shorten">
+            <i class="fa-solid fa-arrow-left"></i>
+          </li>
         </ul>
       </nav>
     </aside>
@@ -214,15 +229,13 @@
         <section class="container title-container">
           <article class="row">
             <div class="col">
-              <h2>Dashboard</h2>
+              <h2>Form Layouts</h2>
             </div>
           </article>
         </section>
         <!-- end section title -->
         <!-- section main content -->
-        <section class="container container-content">
-          <!--  -->
-        </section>
+        <section class="container container-content"></section>
         <!-- end section main content -->
         <footer>
           <p>
@@ -237,6 +250,10 @@
         </footer>
       </div>
     </main>
+    <div class="wrapper-loader">
+      <span class="loader"></span>
+      <span class="text-loader">Sabar Ngab...</span>
+    </div>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
