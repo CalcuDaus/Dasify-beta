@@ -3,6 +3,7 @@
 :root {
     --background: #222831;
     --background-secondary: #393E46;
+    --background-secondary-gradient: linear-gradient(#5f6673 1%, #393E46 80%);
     --cyan: #00ADB5;
     --white: #EEE;
     --secondary: #D9D9D9;
@@ -99,7 +100,8 @@ footer {
 }
 
 .nav-btn:hover {
-    background-color: var(--background-secondary);
+    background: var(--background-secondary-gradient);
+    box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.299);
 }
 
 .c-pointer {
@@ -108,14 +110,16 @@ footer {
 
 .btn-shorten:hover {
     transform: scale(1.05);
-    box-shadow: .5px .5px 3px rgba(255, 255, 255, 0.619);
+    background: var(--background-secondary-gradient);
+    box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.299);
 }
 
 .btn-shorten {
     margin-left: 65px;
     width: 50px;
     transition: all .5s;
-    background-color: var(--background-secondary);
+    background: var(--background-secondary-gradient);
+    box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.299);
 }
 
 .btn-shorten>i {
@@ -425,7 +429,8 @@ canvas {
 }
 
 .nav-btn-active {
-    background-color: var(--background-secondary);
+    background: var(--background-secondary-gradient);
+    box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.299);
 }
 
 #sidebar.sidebar-active {
