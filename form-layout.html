@@ -24,7 +24,7 @@
       <nav class="mt-5">
         <ul class="menu-sidebar">
           <!-- S: Dashboard -->
-          <li class="nav-btn nav-btn-active">
+          <li class="nav-btn">
             <img src="assets/img/icons-home.png" width="22px" alt="" />
             <a href="index.html">Dashboard</a>
           </li>
@@ -73,7 +73,7 @@
           <!-- E: Report -->
           <!-- S: Layout -->
           <li
-            class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start"
+            class="nav-btn drop-nav nav-btn-active c-pointer d-flex flex-column justify-content-start align-items-start"
           >
             <div class="">
               <img src="assets/img/icons-grid.png" width="22px" alt="" />
@@ -101,6 +101,36 @@
             </div>
           </li>
           <!-- E: Layout -->
+          <!-- S: Table -->
+          <li
+            class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start"
+          >
+            <div class="">
+              <i class="fa-solid fa-table fa-lg"></i>
+              <a href="javascript:void(0);" class="btn-dropdown">Tables </a>
+            </div>
+            <i class="fa-solid fa-less-than less-than"></i>
+            <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
+              <ul>
+                <li class="mt-2">
+                  <a href="tables.html" class="d-flex align-items-center">
+                    <i class="fa-solid fa-crosshairs pe-2"></i>
+                    <span>Tables</span>
+                  </a>
+                </li>
+                <li class="mt-2">
+                  <a
+                    href="javascript:void(0);"
+                    class="d-flex align-items-center"
+                  >
+                    <i class="fa-solid fa-crosshairs pe-2"></i>
+                    <span>Data Tables</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- E: Table -->
           <!-- S: Setting -->
           <li class="nav-btn setting">
             <img src="assets/img/icons-setting.png" width="22px" alt="" />
@@ -235,7 +265,82 @@
         </section>
         <!-- end section title -->
         <!-- section main content -->
-        <section class="container container-content"></section>
+        <section class="container container-content mt-2">
+          <div
+            class="form-custom-group position-relative custom-card p-3 shadow-card"
+          >
+            <div
+              class="bg-primary h2-title-card position-absolute top-0 w-100 start-0 py-3 px-3"
+            >
+              <h4>Dasify Form Theme</h4>
+            </div>
+            <form action="" class="dasify-form mt-6 d-flex flex-column gap-20">
+              <label for="email" class="dasify-label">Email Address</label>
+              <input
+                type="text"
+                class="dasify-input"
+                placeholder="example@gmail.com"
+              />
+              <label for="date" class="dasify-label">Date</label>
+              <input type="date" name="" id="date" class="dasify-input" />
+              <label for="textArea" class="dasify-label">Text Area</label>
+              <textarea
+                name=""
+                id="textArea"
+                placeholder="textarea example.."
+                cols="30"
+                rows="10"
+                class="dasify-input"
+              ></textarea>
+              <label name="select" id="select" class="dasify-label"
+                >Select</label
+              >
+              <select for="select" class="dasify-select">
+                <option value="value1">value1</option>
+                <option value="value2">value2</option>
+                <option value="value3">value3</option>
+              </select>
+            </form>
+          </div>
+          <div
+            class="form-bootstrap position-relative custom-card p-3 shadow-card mt-5"
+          >
+            <div
+              class="bg-primary h2-title-card position-absolute top-0 w-100 start-0 py-3 px-3"
+            >
+              <h4>Default Bootsrap Form Theme</h4>
+            </div>
+            <div class="mb-3 mt-6">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Example textarea</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3 d-flex justify-content-end">
+              <a
+                target="_blank"
+                href="https://getbootstrap.com/docs/5.2/forms/form-control/"
+                class="btn btn-info text-light"
+                >See more details here...</a
+              >
+            </div>
+          </div>
+        </section>
         <!-- end section main content -->
         <footer>
           <p>

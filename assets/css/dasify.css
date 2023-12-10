@@ -360,6 +360,15 @@ canvas {
     display: block;
 }
 
+.custom-card {
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    transition: all .3s;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .title-container::after {
     content: "";
     background: url("../img/baloon.png");
@@ -384,13 +393,78 @@ canvas {
 
 }
 
+.bg-cyan {
+    background-color: var(--cyan);
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
 .shadow-card {
     box-shadow: 2px 4px 15px rgba(40, 40, 40, 0.599);
 }
 
+
+
 .text-cyan {
     color: var(--cyan);
 }
+
+.mt-6 {
+    margin-top: 4.5rem;
+}
+
+/* Form Layouts */
+.dasify-label {
+    margin-bottom: -12px;
+}
+
+.dasify-form input[type="date"] .calendar-header {
+    background-color: blue;
+}
+
+.dasify-input {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.476);
+    background-color: transparent;
+    padding: 8px 9px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: .2px 0 5px rgba(17, 17, 17, 0.299);
+}
+
+.dasify-select {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.476);
+    background-color: transparent;
+    padding: 8px 9px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: .2px 0 5px rgba(17, 17, 17, 0.299);
+}
+
+.dasify-input::placeholder {
+    color: rgba(0, 0, 0, 0.706);
+}
+
+.h2-title-card {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.h2-title-card>h4 {
+    color: var(--white) !important;
+    margin: 0;
+}
+
+
+
+
+
+
+
 
 /* ACTIVE TOOLS */
 /* .col-active {
@@ -522,7 +596,24 @@ canvas {
 }
 
 /* Loader  */
+.text-loader {
+    position: fixed;
+    left: 50%;
+    top: 58%;
+    z-index: 99;
+    transform: translate(-50%, -50%);
 
+}
+
+.wrapper-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #2228318a;
+    backdrop-filter: blur(20px);
+    transition: all .6s;
+    opacity: 1;
+}
 
 .loader {
     position: fixed;
@@ -536,24 +627,7 @@ canvas {
     animation: eat 1s linear infinite;
 }
 
-.text-loader {
-    position: fixed;
-    left: 50%;
-    top: 56%;
-    z-index: 99;
-    transform: translate(-50%, -50%);
 
-}
-
-.wrapper-loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #2228318a;
-    backdrop-filter: blur(15px);
-    transition: all .6s;
-    opacity: 1;
-}
 
 .loader::after,
 .loader::before {
@@ -605,3 +679,100 @@ canvas {
         opacity: 0;
     }
 }
+
+/* 
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 99;
+    transform: translate(-50%, -50%);
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #fff;
+    border: 8px solid #131a1d;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #263238;
+    z-index: 5;
+    border-bottom: 8px solid #131a1d;
+    box-sizing: border-box;
+    animation: eyeShade 3s infinite;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    width: 32px;
+    z-index: 2;
+    height: 32px;
+    background: #111;
+    border-radius: 50%;
+    animation: eyeMove 3s infinite;
+}
+
+@keyframes eyeShade {
+    0% {
+        transform: translateY(0)
+    }
+
+    20% {
+        transform: translateY(5px)
+    }
+
+    40%,
+    50% {
+        transform: translateY(-5px)
+    }
+
+    60% {
+        transform: translateY(-8px)
+    }
+
+    75% {
+        transform: translateY(5px)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+@keyframes eyeMove {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    20% {
+        transform: translate(0px, 5px)
+    }
+
+    40%,
+    50% {
+        transform: translate(0px, -5px)
+    }
+
+    60% {
+        transform: translate(-10px, -5px)
+    }
+
+    75% {
+        transform: translate(-20px, 5px)
+    }
+
+    100% {
+        transform: translate(0, 10px)
+    }
+} */

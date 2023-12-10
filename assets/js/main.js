@@ -81,31 +81,40 @@ hamburgerIcon.addEventListener("click", () => {
 dropNavs.forEach((dropNav) => {
   dropNav.addEventListener("click", () => {
     if (sidebar.classList.contains("shorten-active")) {
-      shortSide();
+      toggleSidebar();
     }
   });
 });
 
-btnShort.addEventListener("click", function () {
-  shortSide();
-});
-function shortSide() {
+btnShort.addEventListener("click", () => toggleSidebar());
+function toggleSidebar() {
   sidebar.classList.toggle("shorten-active");
   main.classList.toggle("main-short-active");
+
   if (sidebar.classList.contains("shorten-active")) {
-    aNavs.forEach((e) => (e.style.display = "none"));
-    dropNavs.forEach((e) => (e.style.height = "44px"));
-    lessThans.forEach((e) => (e.style.display = "none"));
-    document.querySelector(".logo p").style.display = "none";
-    btnShort.style.marginLeft = "0px";
-    document.querySelector(".fa-arrow-left").style.transform = "rotate(180deg)";
+    // Sidebar is shortened
+    hideElementsOnShortSidebar();
   } else {
-    document.querySelector(".logo p").style.display = "block";
-    aNavs.forEach((e) => (e.style.display = "inline"));
-    lessThans.forEach((e) => (e.style.display = "inline"));
-    btnShort.style.marginLeft = "65px";
-    document.querySelector(".fa-arrow-left").style.transform = "rotate(0deg)";
+    // Sidebar is not shortened
+    showElementsOnFullSidebar();
   }
+}
+
+function hideElementsOnShortSidebar() {
+  aNavs.forEach((e) => (e.style.display = "none"));
+  dropNavs.forEach((e) => (e.style.height = "44px"));
+  lessThans.forEach((e) => (e.style.display = "none"));
+  document.querySelector(".logo p").style.display = "none";
+  btnShort.style.marginLeft = "0px";
+  document.querySelector(".fa-arrow-left").style.transform = "rotate(180deg)";
+}
+
+function showElementsOnFullSidebar() {
+  document.querySelector(".logo p").style.display = "block";
+  aNavs.forEach((e) => (e.style.display = "inline"));
+  lessThans.forEach((e) => (e.style.display = "inline"));
+  btnShort.style.marginLeft = "65px";
+  document.querySelector(".fa-arrow-left").style.transform = "rotate(0deg)";
 }
 
 // header

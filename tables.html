@@ -24,7 +24,7 @@
       <nav class="mt-5">
         <ul class="menu-sidebar">
           <!-- S: Dashboard -->
-          <li class="nav-btn nav-btn-active">
+          <li class="nav-btn">
             <img src="assets/img/icons-home.png" width="22px" alt="" />
             <a href="index.html">Dashboard</a>
           </li>
@@ -103,11 +103,11 @@
           <!-- E: Layout -->
           <!-- S: Table -->
           <li
-            class="nav-btn drop-nav c-pointer d-flex flex-column justify-content-start align-items-start"
+            class="nav-btn drop-nav nav-btn-active c-pointer d-flex flex-column justify-content-start align-items-start"
           >
             <div class="">
               <i class="fa-solid fa-table fa-lg"></i>
-              <a href="#" class="btn-dropdown">Tables </a>
+              <a href="javascript:void(0);" class="btn-dropdown">Tables </a>
             </div>
             <i class="fa-solid fa-less-than less-than"></i>
             <div class="dropdown-sidebar mt-2 ms-1 d-flex flex-column">
@@ -259,85 +259,63 @@
         <section class="container title-container">
           <article class="row">
             <div class="col">
-              <h2>Dashboard</h2>
+              <h2>Tables</h2>
             </div>
           </article>
         </section>
         <!-- end section title -->
         <!-- section main content -->
-        <section class="container container-content">
-          <!-- row card dashboard -->
-          <article
-            class="row d-flex justify-content-center align-items-center flex-wrap"
-          >
-            <div
-              class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3"
-            >
+        <section class="container container-content mt-2">
+          <!-- S : Table Bootstrap -->
+          <div class="row w-100">
+            <div class="col custom-card position-relative">
               <div
-                class="d-card shadow-card d-flex justify-content-center align-items-center flex-column"
+                class="bg-primary h2-title-card position-absolute top-0 w-100 start-0 py-3 px-3"
               >
-                <h4>Order</h4>
-                <h1>25</h1>
-                <i class="fa-solid fa-layer-group icon-card"></i>
+                <h4>Dasify Form Theme</h4>
+              </div>
+              <div class="table-responsive mt-6">
+                <table class="table table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Daus</td>
+                      <td>daus@gmail.com</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Nisa</td>
+                      <td>nisa@gmail.com</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Praja</td>
+                      <td>praja@gmail.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-3 d-flex justify-content-end">
+                <a
+                  target="_blank"
+                  href="https://getbootstrap.com/docs/5.2/forms/form-control/"
+                  class="btn btn-info text-light"
+                  >See more details here...</a
+                >
               </div>
             </div>
-            <div
-              class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3"
-            >
-              <div
-                class="d-card shadow-card d-flex justify-content-center align-items-center flex-column"
-              >
-                <h4>User</h4>
-                <h1>3</h1>
-                <i class="fa-solid fa-user icon-card"></i>
-              </div>
-            </div>
-            <div
-              class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3"
-            >
-              <div
-                class="d-card shadow-card d-flex justify-content-center align-items-center flex-column"
-              >
-                <h4>Company</h4>
-                <h1>11</h1>
-                <i class="fa-solid fa-city icon-card"></i>
-              </div>
-            </div>
-            <div
-              class="col-md-6 d-flex justify-content-center align-items-center col-xl-3 mt-3"
-            >
-              <div
-                class="d-card shadow-card d-flex justify-content-center align-items-center flex-column"
-              >
-                <h4>Product</h4>
-                <h1>125</h1>
-                <i class="fa-solid fa-box icon-card"></i>
-              </div>
-            </div>
-          </article>
-          <!-- end row card -->
-          <!-- chart row -->
-          <article class="row mt-5">
-            <div class="col-lg-8 mb-3">
-              <div
-                class="chart-card d-flex justify-content-center shadow-card chart-rect mb-3 p-4"
-              >
-                <canvas id="myChart"></canvas>
-              </div>
-              <div
-                class="chart-card d-flex justify-content-center shadow-card chart-rect p-4"
-              >
-                <canvas id="lineChart"></canvas>
-              </div>
-            </div>
-            <div class="col-lg-4 mb-3">
-              <div class="chart-card shadow-card p-4">
-                <canvas id="doughnutChart" class="mb-4"></canvas>
-                <canvas id="pieChart"></canvas>
-              </div>
-            </div>
-          </article>
-          <!-- end chart row -->
+          </div>
+          <!-- E : Table Bootstrap -->
+          <!-- S : Table Dasify -->
+          <div class="row w-100"></div>
+          <!-- E : Table Dasify -->
         </section>
         <!-- end section main content -->
         <footer>
@@ -353,10 +331,10 @@
         </footer>
       </div>
     </main>
-    <div class="wrapper-loader">
+    <!-- <div class="wrapper-loader">
       <span class="loader"></span>
       <span class="text-loader">Sabar Ngab...</span>
-    </div>
+    </div> -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
