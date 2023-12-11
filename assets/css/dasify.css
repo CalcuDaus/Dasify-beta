@@ -517,6 +517,9 @@ canvas {
     border-bottom: 2px solid rgba(0, 0, 0, 0.476);
 }
 
+.dataTables_length select option {
+    color: black;
+}
 
 
 /* ACTIVE TOOLS */
@@ -627,6 +630,15 @@ canvas {
 
     .company-name {
         font-size: 14px;
+    }
+
+    #example_paginate {
+        display: flex;
+    }
+
+    #example_paginate span {
+        display: flex;
+        margin-left: 50px;
     }
 }
 
