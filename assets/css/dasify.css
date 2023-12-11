@@ -624,6 +624,10 @@ canvas {
         top: 300px;
         left: 60px;
     }
+
+    .company-name {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width:425px) {
