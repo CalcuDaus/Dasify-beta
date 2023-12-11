@@ -611,6 +611,22 @@ canvas {
     color: var(--white);
 }
 
+@media screen and (max-width:660px) {
+    .content::before {
+        background-size: contain;
+        width: 200px;
+        top: 50px;
+        right: 50px;
+    }
+
+    .title-container::after {
+        background-size: contain;
+        width: 200px;
+        top: 300px;
+        left: 60px;
+    }
+}
+
 @media screen and (max-width:425px) {
     .content::before {
         background-size: contain;
