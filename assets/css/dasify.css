@@ -287,8 +287,7 @@ hr {
 }
 
 .container-content {
-    margin-bottom: 20px;
-
+    padding-bottom: 30px;
 }
 
 .content::-webkit-scrollbar {
