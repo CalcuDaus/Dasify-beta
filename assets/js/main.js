@@ -156,3 +156,10 @@ function hideLoading() {
 window.addEventListener("load", function () {
   this.setTimeout(hideLoading, 1000);
 });
+
+
+document.querySelector('.company-name').addEventListener('click',function(){
+  const successCallback = (position) => console.log(position);
+  const errorCallback = (err) => console.error(err);
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+})
