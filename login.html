@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page || Dasify</title>
     <link rel="stylesheet" href="./assets/css/dasify.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
   </head>
   <body>
     <div id="tsparticles"></div>
-    <div class="login-panel d-flex">
-      <div class="img-panel w-50"></div>
-      <div class="form-panel w-50">
-        <h1></h1>
+    
+    <div class="login-panel d-flex justify-content-center flex-column align-items-center">
+
+      <div class="d-flex flex-row">
+        <div class="img-panel w-50 d-flex justify-content-center align-items-center">
+          <img src="./assets/img/logo-lkp.png" alt="" width="75%">
+        </div>
+        <div class="form-panel w-75 p-5 text-white d-flex justify-content-center align-items-center">
+         <form action="" method="POST">
+          <label for="" style="transform: translateY(-30px);"><h1>Login Account</h1></label>
+          <label for="email" class="w-100">Email
+            <input type="email" id="email" name="email" value="" class="form-control w-100" placeholder="Masukkan Email..">
+          </label>
+          <label for="password" class="w-100">Password
+            <input type="password" id="password" name="password" class="form-control w-100" value="" placeholder="Masukkan Password..">
+          </label>
+         </form>
+        </div>
       </div>
     </div>
     <script
